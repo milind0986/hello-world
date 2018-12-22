@@ -59,7 +59,30 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {
+        path:'',
+        component:HomeComponent
+      },
+      {
+        path:'followers/:id/:login',
+        component:GithubProfileComponent
+      },
+      {
+        path:'followers',
+        component:GithubFollowersComponent
+      },
+     
+      {
+        path:'posts',
+        component:PostsComponent
+      },
+      {
+        path:'**',
+        component:NotFoundComponent
+      }
+  ])
   ],
   providers: [
     PostService,
